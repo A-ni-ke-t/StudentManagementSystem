@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Attendance</title>
+  <link rel="icon" href="https://media.licdn.com/dms/image/C4D0BAQEyzpku-vI2dQ/company-logo_200_200/0/1519912202396?e=2147483647&v=beta&t=Z1nrtM-cLET8m6ugKFBrr1EN1kxCp0VSxQ5DblcYZXA" type="image/x-icon">
+  <style>
+    body {
+      background-color: #f5f5f5;
+      color: #123e6f;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .card {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+    
+    .card-heading {
+      background-color: #123e6f;
+      color: #ffffff;
+      padding: 10px;
+      text-align: center;
+      margin: 0;
+    }
+    
+    .card-content {
+      margin-top: 20px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+      background-color: #123e6f;
+      color: #ffffff;
+    }
+    
+    a.button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #123e6f;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    
+    a.button:hover {
+      background-color: #0d2a4a;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2 class="card-heading">Attendance Table</h2>
+  
+    <div class="card-content">
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+        <% data.forEach(function(row) { %>
+        <tr>
+          <td><%= row.currentDate.toLocaleDateString() %></td>
+          <td><%= row.sts %></td>
+        </tr>
+        <% }); %>
+      </table>
+      
+      <a class="button" href="/display">Go Back</a>
+    </div>
+  </div>
+</body>
+</html>

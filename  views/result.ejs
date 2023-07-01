@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Attendance Result</title>
+  <link rel="icon" href="https://media.licdn.com/dms/image/C4D0BAQEyzpku-vI2dQ/company-logo_200_200/0/1519912202396?e=2147483647&v=beta&t=Z1nrtM-cLET8m6ugKFBrr1EN1kxCp0VSxQ5DblcYZXA" type="image/x-icon">
+  <style>
+    body {
+      background-color: white;
+      color: #123e6f;
+      font-size: 150%;
+      line-height: 1.5;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    
+    h1, h2 {
+      background-color: #123e6f;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #123e6f;
+      color: white;
+    }
+    
+    input[type="hidden"],
+    input[type="checkbox"] {
+      display: none;
+    }
+    
+    label {
+      display: block;
+      position: relative;
+      padding-left: 25px;
+      cursor: pointer;
+    }
+    
+    label:before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background-color: #EBE8E2;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    
+    input[type="checkbox"]:checked + label:before {
+      background-color: #123e6f;
+    }
+    
+    label:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+    input[type="checkbox"]:checked + label:after {
+      display: block;
+    }
+    
+    input[type="submit"] {
+      display: block;
+      padding: 10px 20px;
+      background-color: #123e6f;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-size: inherit;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #0a2c51;
+    }
+  </style>
+</head>
+<body>
+  <h1>Batch ID: <%= bid %></h1>
+  
+  <h2>Student Details:</h2>
+  
+  <form action="/markattendancedemo" method="post" onsubmit="return alert('Attendance Marked.');">
+    <input type="hidden" name="bid" value="<%= bid %>">
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Student Name</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% students.forEach((student) => { %>
+          <tr>
+            <td>
+              <input type="hidden" name="student[<%= student.sid %>][sid]" value="<%= student.sid %>">
+              <%= student.sid %>
+            </td>
+            <td>
+              <input type="hidden" name="student[<%= student.sid %>][f_name]" value="<%= student.f_name %>">
+              <%= student.f_name %>
+            </td>
+            <td>
+              <input type="checkbox" id="status-<%= student.sid %>" name="student[<%= student.sid %>][status]" value="present">
+              <label for="status-<%= student.sid %>">Present</label>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

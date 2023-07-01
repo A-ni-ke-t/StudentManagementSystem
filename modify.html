@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modify Student Details</title>
+  <link rel="icon" href="https://media.licdn.com/dms/image/C4D0BAQEyzpku-vI2dQ/company-logo_200_200/0/1519912202396?e=2147483647&v=beta&t=Z1nrtM-cLET8m6ugKFBrr1EN1kxCp0VSxQ5DblcYZXA" type="image/x-icon">
+  <style>
+    body {
+      background-color: white;
+      color: #123e6f;
+      font-size: 150%;
+      line-height: 1.5;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      background-color: #123e6f;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      margin-top: 0;
+    }
+    
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    input, textarea, select {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: inherit;
+    }
+    
+    input[type="submit"],
+    input[type="reset"] {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #123e6f;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: inherit;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: #0d2a4a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Modification Form</h1>
+  
+  <form action="modifydemo" method="post" onsubmit="return alert('One Record Successfully Updated.');">
+    <div class="form-group">
+      <label for="sid">Enter Student ID:</label>
+      <input type="text" id="sid" name="sid" placeholder="SID" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="bid">Enter Batch ID:</label>
+      <input type="text" id="bid" name="bid" placeholder="BID" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="firstname">First Name:</label>
+      <input type="text" id="firstname" name="Firstname" placeholder="Enter Name Here" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="lastname">Last Name:</label>
+      <input type="text" id="lastname" name="Lastname" placeholder="Enter Surname Here" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="mail" placeholder="E-Mail Address" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="course">Course:</label>
+      <input type="text" id="course" name="Coursename" placeholder="Enter Course Name" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="username">User Name:</label>
+      <input type="text" id="username" name="Username" placeholder="Enter User Name" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" required>
+    </div>
+    
+    <div class="form-group">
+      <input type="submit" value="Modify">
+      <input type="reset" value="Reset">
+    </div>
+  </form>
+</body>
+</html>
