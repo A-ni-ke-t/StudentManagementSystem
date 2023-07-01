@@ -1,1 +1,3 @@
 # StudentManagementSystem
+
+It serves as a comprehensive management system designed for students and teachers alike. Within this system, teachers have the ability to create customized batches and effortlessly record student attendance, enabling them to monitor their progress effectively. Concurrently, students can easily access their personal information and conveniently keep track of their attendance records.
